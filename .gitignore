@@ -1,0 +1,56 @@
+# ==============================================================================
+# Django & Python Core
+# ==============================================================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django specific
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Django media & static collections
+# (Media contains user uploads; Static collected assets are built during deployment)
+media/
+staticfiles/
+
+# ==============================================================================
+# Virtual Environments & Secrets
+# ==============================================================================
+# Local environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ==============================================================================
+# IDEs, Editors & OS Files
+# ==============================================================================
+# JetBrains / PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Operating System specific
+.DS_Store
+Thumbs.db
+
+# ==============================================================================
+# Testing & Code Quality
+# ==============================================================================
+.htmlcov/
+.tox/
+.coverage
+.cache
+.pytest_cache/

@@ -1,0 +1,187 @@
+
+  <!-- Main Application Wrapper -->
+  <div class="main-wrapper">
+
+    <!-- Top Header Navigation -->
+    <header class="top-header">
+
+      <div class="header-right">
+        <button id="openLogModalBtn" class="btn btn-primary">+ Log Daily Event</button>
+        <button id="notificationBtn" class="btn-icon" aria-label="View notifications">
+          <span class="notification-dot"></span>
+          Alerts
+        </button>
+      </div>
+    </header>
+
+    <!-- Scrollable Main Content -->
+    <main class="content-area">
+
+      <!-- Page Banner -->
+      <section class="page-header">
+        <div>
+          <h1 class="page-title">Operational KPI Performance</h1>
+          <p class="page-subtitle">Put Something Here</p>
+        </div>
+        <div class="cycle-pill">
+          Cycle Day: <strong>Put Number Here</strong>
+        </div>
+      </section>
+
+      <!-- 6 Key Performance Indicator Cards -->
+      <section class="kpi-grid">
+        
+        <!-- KPI 1: Live Population -->
+        <article class="kpi-card">
+          <header class="kpi-header">
+            <h2 class="kpi-label">Live Population</h2>
+          </header>
+          <div class="kpi-value">1000</div>
+          <footer class="kpi-footer">
+            <span>Placed: 1000</span>
+            <span class="pill pill-success">97.5% Livability</span>
+          </footer>
+        </article>
+
+        <!-- KPI 2: Mortality -->
+        <article class="kpi-card">
+          <header class="kpi-header">
+            <h2 class="kpi-label">Mortality (Today)</h2>
+          </header>
+          <div class="kpi-value">8 <small>birds</small></div>
+          <footer class="kpi-footer">
+            <span>Cumul: 2.48%</span>
+            <span class="pill pill-success">&lt; 3.0% Target</span>
+          </footer>
+        </article>
+
+        <!-- KPI 3: FCR -->
+        <article class="kpi-card">
+          <header class="kpi-header">
+            <h2 class="kpi-label">Feed Conversion (FCR)</h2>
+          </header>
+          <div class="kpi-value">1.44</div>
+          <footer class="kpi-footer">
+            <span>Target: 1.48</span>
+            <span class="pill pill-success">-0.04 Efficient</span>
+          </footer>
+        </article>
+
+        <!-- KPI 4: Avg Body Weight -->
+        <article class="kpi-card">
+          <header class="kpi-header">
+            <h2 class="kpi-label">Average Weight</h2>
+          </header>
+          <div class="kpi-value">1,820 <small>g</small></div>
+          <footer class="kpi-footer">
+            <span>Breed Ref: 1,770g</span>
+            <span class="pill pill-info">+50g vs Target</span>
+          </footer>
+        </article>
+
+        <!-- KPI 5: Feed Intake -->
+        <article class="kpi-card">
+          <header class="kpi-header">
+            <h2 class="kpi-label">Feed Consumed Today</h2>
+          </header>
+          <div class="kpi-value">3,725 <small>kg</small></div>
+          <footer class="kpi-footer">
+            <span>156 g / bird</span>
+            <span>Finisher 1</span>
+          </footer>
+        </article>
+
+        <!-- KPI 6: Water Consumption -->
+        <article class="kpi-card">
+          <header class="kpi-header">
+            <h2 class="kpi-label">Water Intake</h2>
+          </header>
+          <div class="kpi-value">6,850 <small>L</small></div>
+          <footer class="kpi-footer">
+            <span>Ratio: 1.84 L/kg</span>
+            <span class="pill pill-success">Normal</span>
+          </footer>
+        </article>
+
+      </section>
+
+      <!-- Charts & Environmental Layout Row -->
+      <div class="dashboard-split">
+
+        <!-- Chart Section -->
+        <section class="card chart-card">
+          <header class="card-header">
+            <div>
+              <h2 class="card-title">Flock Weight Gain vs Breed Standard (g)</h2>
+              <p class="card-subtitle">Sampled weight compared against Ross 308 performance curve</p>
+            </div>
+            <div class="chart-legend">
+              <span class="legend-item legend-actual">Actual (g)</span>
+              <span class="legend-item legend-benchmark">Benchmark (g)</span>
+            </div>
+          </header>
+          <div class="chart-container">
+            <canvas id="growthChart"></canvas>
+          </div>
+        </section>
+
+        <!-- IoT Shed Telemetry Section -->
+        <section class="card telemetry-card">
+          <header class="card-header">
+            <div>
+              <h2 class="card-title">IoT Shed Climate Telemetry</h2>
+              <p class="card-subtitle">Real-time environmental sensors</p>
+            </div>
+            <span class="pill pill-success">Live Sync</span>
+          </header>
+
+          <div class="sensor-matrix">
+            <article class="sensor-box">
+              <div class="sensor-box-header">
+                <span class="sensor-title">House 01</span>
+                <span class="tag tag-normal">Normal</span>
+              </div>
+              <ul class="sensor-readings">
+                <li><span>Temp:</span> <strong>22.8 °C</strong></li>
+                <li><span>Humidity:</span> <strong>63%</strong></li>
+                <li><span>Ammonia:</span> <strong>11 ppm</strong></li>
+                <li><span>Ventilation:</span> <strong>75%</strong></li>
+              </ul>
+            </article>
+
+            <article class="sensor-box sensor-box-alert">
+              <div class="sensor-box-header">
+                <span class="sensor-title">House 02</span>
+                <span class="tag tag-warning">Warning</span>
+              </div>
+              <ul class="sensor-readings">
+                <li><span>Temp:</span> <strong>26.4 °C</strong></li>
+                <li><span>Humidity:</span> <strong>68%</strong></li>
+                <li><span>Ammonia:</span> <strong>14 ppm</strong></li>
+                <li><span>Ventilation:</span> <strong>100% Boost</strong></li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Silo Levels -->
+          <div class="silo-container">
+            <div class="silo-labels">
+              <span>Silo 1 (Finisher Pellets)</span>
+              <strong>14.2 / 20 Tons</strong>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 71%;"></div>
+            </div>
+            <span class="silo-footnote">Estimated 3.8 days of supply remaining</span>
+          </div>
+        </section>
+
+      </div>
+
+    </main>
+
+  </div>
+  
+
+</body>
+</html>
