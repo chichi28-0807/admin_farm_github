@@ -7,6 +7,8 @@ if (empty($_SESSION['authenticated'])) {
 }
 
 $currentPage = preg_replace('/[^a-z0-9_-]/i', '', $_GET['page'] ?? 'dashboard');
+require_once __DIR__ . '/module_helpers.php';
+handle_crud_request($currentPage);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +21,6 @@ $currentPage = preg_replace('/[^a-z0-9_-]/i', '', $_GET['page'] ?? 'dashboard');
 <body>
     <div class="main-wrapper">
         <aside class="sidebar">
-            <h2 class="logo">Farm</h2>
             <?php require_once('nav.php'); ?>
         </aside>
 
@@ -37,8 +38,13 @@ $currentPage = preg_replace('/[^a-z0-9_-]/i', '', $_GET['page'] ?? 'dashboard');
                     $headerMarkup = $headerMatch[0];
                 }
             }
-            if ($pageMarkup !== false && preg_match('/<main class="content-area">(.*?)<\/main>/s', $pageMarkup, $contentMatch)) {
-                $contentMarkup = $contentMatch[1];
+            if ($pageMarkup !== false) {
+                ob_start();
+                include $pageFile;
+                $renderedPage = ob_get_clean();
+                if (preg_match('/<main class="content-area">(.*?)<\/main>/s', $renderedPage, $contentMatch)) {
+                    $contentMarkup = $contentMatch[1];
+                }
             }
             echo $headerMarkup;
             ?>
