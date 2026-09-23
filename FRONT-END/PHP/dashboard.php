@@ -18,6 +18,19 @@
     <div class="cycle-pill">Cycle Day: <strong>Put Number Here</strong></div>
   </section>
 
+  <section class="module-summary-card">
+    <div class="module-summary-header">
+      <h2>Farm Modules</h2>
+    </div>
+    <div class="module-summary-grid">
+      <div class="module-summary-item module-blue">Livestock Management</div>
+      <div class="module-summary-item module-green">Feed Production</div>
+      <div class="module-summary-item module-yellow">Equipment Management</div>
+      <div class="module-summary-item module-purple">Inventory &amp; Procurement</div>
+      <div class="module-summary-item module-red">Sales Management</div>
+    </div>
+  </section>
+
   <section class="kpi-grid">
     <article class="kpi-card">
       <header class="kpi-header"><h2 class="kpi-label">Live Population</h2></header>

@@ -3,27 +3,38 @@ $userRole = $_SESSION['user_role'] ?? 'admin';
 $currentPage = $currentPage ?? 'dashboard';
 ?>
     <nav class="nav-menu">
+      <div class="overview-module">
+        <div class="overview-module-label">Dashboard Module</div>
+        <div class="overview-module-row">
+          <span>Livestock Management</span>
+          <strong>680 Heads</strong>
+        </div>
+        <div class="overview-module-row">
+          <span>Feed Production</span>
+          <strong>4,200 kg</strong>
+        </div>
+        <div class="overview-module-row">
+          <span>Equipment Management</span>
+          <strong>18 Active</strong>
+        </div>
+        <div class="overview-module-row">
+          <span>Inventory &amp; Procurement</span>
+          <strong>96% Stock</strong>
+        </div>
+        <div class="overview-module-row">
+          <span>Sales Management</span>
+          <strong>$14.8K</strong>
+        </div>
+      </div>
+
       <div class="nav-heading">Operations</div>
       <?php if (in_array($userRole, ['admin', 'manager', 'employee'], true)): ?>
       <ul class="nav-list">
-        <li><a href="Temple.php?page=dashboard" class="nav-link<?php echo $currentPage === 'dashboard' ? ' active' : ''; ?>">Dashboard</a></li>
-        <li><a href="Temple.php?page=flocks" class="nav-link<?php echo $currentPage === 'flocks' ? ' active' : ''; ?>">Flocks &amp; Batches</a></li>
-        <li><a href="#daily-logs" class="nav-link">Daily Records</a></li>
-        <li><a href="#feed" class="nav-link">Feed &amp; Silos</a></li>
-      </ul>
-
-      <div class="nav-heading">Health &amp; Hardware</div>
-      <ul class="nav-list">
-        <li><a href="#vaccines" class="nav-link">Vaccination Schedule</a></li>
-        <li><a href="#telemetry" class="nav-link">IoT House Climate</a></li>
-      </ul>
-      <?php endif; ?>
-
-      <?php if (in_array($userRole, ['admin', 'manager'], true)): ?>
-      <div class="nav-heading">Commercial</div>
-      <ul class="nav-list">
-        <li><a href="#sales" class="nav-link">Sales &amp; Orders</a></li>
-        <li><a href="#reports" class="nav-link">Reports &amp; P&amp;L</a></li>
+        <li><a href="Temple.php?page=dashboard" class="nav-link<?php echo $currentPage === 'dashboard' ? ' active' : ''; ?>">Livestock Management</a></li>
+        <li><a href="#" class="nav-link">Feed Production</a></li>
+        <li><a href="#" class="nav-link">Equipment Management</a></li>
+        <li><a href="#" class="nav-link">Inventory &amp; Procurement</a></li>
+        <li><a href="#" class="nav-link">Sales Management</a></li>
       </ul>
       <?php endif; ?>
 
