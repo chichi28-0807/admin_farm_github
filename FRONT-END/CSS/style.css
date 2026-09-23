@@ -540,6 +540,10 @@ button {
   padding: 20px 22px;
 }
 
+.module-data-section {
+  margin-bottom: 16px;
+}
+
 .card-header {
   display: flex;
   align-items: flex-start;

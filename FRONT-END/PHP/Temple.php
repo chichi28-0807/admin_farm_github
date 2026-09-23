@@ -36,8 +36,13 @@ $currentPage = preg_replace('/[^a-z0-9_-]/i', '', $_GET['page'] ?? 'dashboard');
                     $headerMarkup = $headerMatch[0];
                 }
             }
-            if ($pageMarkup !== false && preg_match('/<main class="content-area">(.*?)<\/main>/s', $pageMarkup, $contentMatch)) {
-                $contentMarkup = $contentMatch[1];
+            if ($pageMarkup !== false) {
+                ob_start();
+                include $pageFile;
+                $renderedPage = ob_get_clean();
+                if (preg_match('/<main class="content-area">(.*?)<\/main>/s', $renderedPage, $contentMatch)) {
+                    $contentMarkup = $contentMatch[1];
+                }
             }
             echo $headerMarkup;
             ?>
