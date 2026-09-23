@@ -3,10 +3,15 @@ $userRole = $_SESSION['user_role'] ?? 'admin';
 $currentPage = $currentPage ?? 'dashboard';
 ?>
     <nav class="nav-menu">
+      <div class="nav-heading">Farm</div>
+      <ul class="nav-list">
+        <li><a href="Temple.php?page=dashboard" class="nav-link<?php echo $currentPage === 'dashboard' ? ' active' : ''; ?>">Dashboard</a></li>
+      </ul>
+
       <div class="nav-heading">Operations</div>
       <?php if (in_array($userRole, ['admin', 'manager', 'employee'], true)): ?>
       <ul class="nav-list">
-        <li><a href="Temple.php?page=dashboard" class="nav-link<?php echo $currentPage === 'dashboard' ? ' active' : ''; ?>">Livestock Management</a></li>
+        <li><a href="#" class="nav-link">Livestock Management</a></li>
         <li><a href="#" class="nav-link">Feed Production</a></li>
         <li><a href="#" class="nav-link">Equipment Management</a></li>
         <li><a href="#" class="nav-link">Inventory &amp; Procurement</a></li>

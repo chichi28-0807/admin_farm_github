@@ -19,7 +19,6 @@ $currentPage = preg_replace('/[^a-z0-9_-]/i', '', $_GET['page'] ?? 'dashboard');
 <body>
     <div class="main-wrapper">
         <aside class="sidebar">
-            <h2 class="logo">Farm</h2>
             <?php require_once('nav.php'); ?>
         </aside>
 
