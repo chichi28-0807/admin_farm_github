@@ -1,4 +1,14 @@
 <!-- Dashboard template loaded by Temple.php -->
+<?php
+require_once __DIR__ . '/module_helpers.php';
+$dashboardMetrics = crud_rows('dashboard_metrics', [
+  ['metric_id' => 'KPI-001', 'name' => 'Live Population', 'value' => '1000', 'unit' => 'birds', 'status' => 'healthy'],
+  ['metric_id' => 'KPI-002', 'name' => 'Mortality Today', 'value' => '8', 'unit' => 'birds', 'status' => 'within target'],
+  ['metric_id' => 'KPI-003', 'name' => 'Feed Conversion', 'value' => '1.44', 'unit' => 'ratio', 'status' => 'efficient'],
+  ['metric_id' => 'KPI-004', 'name' => 'Average Weight', 'value' => '1820', 'unit' => 'grams', 'status' => 'above target'],
+  ['metric_id' => 'KPI-005', 'name' => 'Water Intake', 'value' => '6850', 'unit' => 'liters', 'status' => 'normal'],
+]);
+?>
 <header class="top-header">
   <div class="header-right">
     <button id="openLogModalBtn" class="btn btn-primary">+ Log Daily Event</button>
@@ -16,6 +26,29 @@
       <p class="page-subtitle">Put Something Here</p>
     </div>
     <div class="cycle-pill">Cycle Day: <strong>Put Number Here</strong></div>
+  </section>
+
+  <section class="module-mini-grid">
+    <article class="mini-module-card module-blue">
+      <span class="mini-module-label">Livestock Management</span>
+      <strong class="mini-module-value">680 Heads</strong>
+    </article>
+    <article class="mini-module-card module-green">
+      <span class="mini-module-label">Feed Production</span>
+      <strong class="mini-module-value">4,200 kg</strong>
+    </article>
+    <article class="mini-module-card module-yellow">
+      <span class="mini-module-label">Equipment Management</span>
+      <strong class="mini-module-value">18 Active</strong>
+    </article>
+    <article class="mini-module-card module-purple">
+      <span class="mini-module-label">Inventory &amp; Procurement</span>
+      <strong class="mini-module-value">96% Stock</strong>
+    </article>
+    <article class="mini-module-card module-red">
+      <span class="mini-module-label">Sales Management</span>
+      <strong class="mini-module-value">$14.8K</strong>
+    </article>
   </section>
 
   <section class="kpi-grid">
@@ -85,4 +118,6 @@
       </div>
     </section>
   </div>
+
+  <?php render_crud_table('Dashboard KPI Records', 'dashboard_metrics', $dashboardMetrics, 'dashboard'); ?>
 </main>
