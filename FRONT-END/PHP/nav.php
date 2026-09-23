@@ -26,4 +26,8 @@ $currentPage = $currentPage ?? 'dashboard';
         <li><a href="#reports" class="nav-link">Reports &amp; P&amp;L</a></li>
       </ul>
       <?php endif; ?>
+
+      <div class="sidebar-footer">
+        <a href="LOGIN.PHP?logout=1" class="nav-link">Sign out</a>
+      </div>
     </nav>

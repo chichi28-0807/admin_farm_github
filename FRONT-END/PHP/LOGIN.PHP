@@ -1,3 +1,29 @@
+<?php
+session_start();
+
+if (isset($_GET['logout'])) {
+	$_SESSION = [];
+	session_destroy();
+	header('Location: LOGIN.PHP');
+	exit;
+}
+
+$loginError = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+	$email = trim($_POST['email'] ?? '');
+	$password = $_POST['password'] ?? '';
+
+	if ($email !== '' && $password !== '') {
+		$_SESSION['authenticated'] = true;
+		$_SESSION['user_email'] = $email;
+		$_SESSION['user_role'] = 'admin';
+		header('Location: Temple.php?page=dashboard');
+		exit;
+	}
+
+	$loginError = 'Enter your email address and password to continue.';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +56,7 @@
 		.panel-label { margin: 0 0 11px; color: var(--brown); font-size: 12px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
 		h2 { margin: 0; color: var(--ink); font-size: clamp(32px, 3vw, 44px); line-height: 1.12; }
 		.intro { margin: 14px 0 35px; color: var(--muted); font-size: 14px; }
+		.login-error { margin: -16px 0 20px; padding: 11px 13px; border-left: 3px solid #b54b32; background: #fff0eb; color: #8b3525; font-size: 12px; line-height: 1.45; }
 		form { display: grid; gap: 20px; }
 		.field { display: grid; gap: 8px; }
 		label { color: #50483f; font-size: 12px; font-weight: 700; }
@@ -87,6 +114,9 @@
 				<p class="panel-label">FarmHouse portal</p>
 				<h2>Welcome back</h2>
 				<p class="intro">Sign in to continue managing your farm.</p>
+				<?php if ($loginError !== ''): ?>
+					<p class="login-error" role="alert"><?php echo htmlspecialchars($loginError, ENT_QUOTES, 'UTF-8'); ?></p>
+				<?php endif; ?>
 				<form action="" method="post">
 					<div class="field">
 						<label for="email">Email address</label>

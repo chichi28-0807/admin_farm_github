@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (empty($_SESSION['authenticated'])) {
+    header('Location: LOGIN.PHP');
+    exit;
+}
+
 $currentPage = preg_replace('/[^a-z0-9_-]/i', '', $_GET['page'] ?? 'dashboard');
 ?>
 <!DOCTYPE html>
@@ -7,7 +14,7 @@ $currentPage = preg_replace('/[^a-z0-9_-]/i', '', $_GET['page'] ?? 'dashboard');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chicken Farm Management</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
     <div class="main-wrapper">
