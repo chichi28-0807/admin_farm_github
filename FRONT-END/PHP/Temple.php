@@ -25,8 +25,8 @@ $currentPage = preg_replace('/[^a-z0-9_-]/i', '', $_GET['page'] ?? 'dashboard');
 
         <main class="dashboard-page">
             <?php
-            $dashboardFile = __DIR__ . '/dashboard.html';
-            $pageFile = __DIR__ . '/' . ($currentPage ?: 'dashboard') . '.html';
+            $dashboardFile = __DIR__ . '/dashboard.php';
+            $pageFile = __DIR__ . '/' . ($currentPage ?: 'dashboard') . '.php';
             $dashboardMarkup = is_file($dashboardFile) ? file_get_contents($dashboardFile) : false;
             $pageMarkup = is_file($pageFile) ? file_get_contents($pageFile) : false;
             $headerMarkup = '';

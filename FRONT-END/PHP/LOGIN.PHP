@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		<section class="visual" aria-label="FarmHouse welcome">
 			<header class="visual-header">
 				<div class="brand"><span class="brand-mark" aria-hidden="true">⌂</span> FarmHouse</div>
-				<a class="back-link" href="../HTML/Index.php">Back to website &rarr;</a>
+				<a class="back-link" href="Index.php">Back to website &rarr;</a>
 			</header>
 			<div class="visual-copy">
 				<div class="eyebrow">Good things grow here</div>
