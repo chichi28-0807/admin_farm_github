@@ -6,8 +6,8 @@ $currentPage = $currentPage ?? 'dashboard';
       <div class="nav-heading">Operations</div>
       <?php if (in_array($userRole, ['admin', 'manager', 'employee'], true)): ?>
       <ul class="nav-list">
-        <li><a href="temple.php?page=dashboard" class="nav-link<?php echo $currentPage === 'dashboard' ? ' active' : ''; ?>">Dashboard</a></li>
-        <li><a href="temple.php?page=flocks" class="nav-link<?php echo $currentPage === 'flocks' ? ' active' : ''; ?>">Flocks &amp; Batches</a></li>
+        <li><a href="Temple.php?page=dashboard" class="nav-link<?php echo $currentPage === 'dashboard' ? ' active' : ''; ?>">Dashboard</a></li>
+        <li><a href="Temple.php?page=flocks" class="nav-link<?php echo $currentPage === 'flocks' ? ' active' : ''; ?>">Flocks &amp; Batches</a></li>
         <li><a href="#daily-logs" class="nav-link">Daily Records</a></li>
         <li><a href="#feed" class="nav-link">Feed &amp; Silos</a></li>
       </ul>
