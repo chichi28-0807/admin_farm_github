@@ -37,7 +37,7 @@ if (!function_exists('render_data_table')) {
   <section class="page-header">
     <div><h1 class="page-title">Sales Management</h1><p class="page-subtitle">Review customers, sales transactions, and itemized farm products.</p></div>
   </section>
-  <?php render_data_table('Customer Directory', $customers); ?>
-  <?php render_data_table('Sales Transactions', $sales); ?>
-  <?php render_data_table('Sale Items', $saleItems); ?>
+  <?php render_crud_table('Customer Directory', 'customer_directory', crud_rows('customer_directory', $customers), 'sales_management'); ?>
+  <?php render_crud_table('Sales Transactions', 'sales_transactions', crud_rows('sales_transactions', $sales), 'sales_management'); ?>
+  <?php render_crud_table('Sale Items', 'sale_items', crud_rows('sale_items', $saleItems), 'sales_management'); ?>
 </main>

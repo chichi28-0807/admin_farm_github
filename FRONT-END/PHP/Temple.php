@@ -7,6 +7,8 @@ if (empty($_SESSION['authenticated'])) {
 }
 
 $currentPage = preg_replace('/[^a-z0-9_-]/i', '', $_GET['page'] ?? 'dashboard');
+require_once __DIR__ . '/module_helpers.php';
+handle_crud_request($currentPage);
 ?>
 <!DOCTYPE html>
 <html lang="en">

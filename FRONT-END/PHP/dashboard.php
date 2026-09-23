@@ -1,4 +1,14 @@
 <!-- Dashboard template loaded by Temple.php -->
+<?php
+require_once __DIR__ . '/module_helpers.php';
+$dashboardMetrics = crud_rows('dashboard_metrics', [
+  ['metric_id' => 'KPI-001', 'name' => 'Live Population', 'value' => '1000', 'unit' => 'birds', 'status' => 'healthy'],
+  ['metric_id' => 'KPI-002', 'name' => 'Mortality Today', 'value' => '8', 'unit' => 'birds', 'status' => 'within target'],
+  ['metric_id' => 'KPI-003', 'name' => 'Feed Conversion', 'value' => '1.44', 'unit' => 'ratio', 'status' => 'efficient'],
+  ['metric_id' => 'KPI-004', 'name' => 'Average Weight', 'value' => '1820', 'unit' => 'grams', 'status' => 'above target'],
+  ['metric_id' => 'KPI-005', 'name' => 'Water Intake', 'value' => '6850', 'unit' => 'liters', 'status' => 'normal'],
+]);
+?>
 <header class="top-header">
   <div class="header-right">
     <button id="openLogModalBtn" class="btn btn-primary">+ Log Daily Event</button>
@@ -108,4 +118,6 @@
       </div>
     </section>
   </div>
+
+  <?php render_crud_table('Dashboard KPI Records', 'dashboard_metrics', $dashboardMetrics, 'dashboard'); ?>
 </main>

@@ -12,9 +12,9 @@ $stockTransactions = require $dataRoot . '/inventory_procurement/stock_transacti
   <section class="page-header">
     <div><h1 class="page-title">Inventory &amp; Procurement</h1><p class="page-subtitle">Manage vendors, purchase orders, supplies, vaccines, and stock movement.</p></div>
   </section>
-  <?php render_data_table('Supplier Directory', $suppliers); ?>
-  <?php render_data_table('Purchase Orders', $purchaseOrders); ?>
-  <?php render_data_table('Inventory Items', $inventoryItems); ?>
-  <?php render_data_table('Vaccination Stock', $vaccinationStock); ?>
-  <?php render_data_table('Stock Transactions', $stockTransactions); ?>
+  <?php render_crud_table('Supplier Directory', 'supplier_directory', crud_rows('supplier_directory', $suppliers), 'inventory_procurement'); ?>
+  <?php render_crud_table('Purchase Orders', 'purchase_orders', crud_rows('purchase_orders', $purchaseOrders), 'inventory_procurement'); ?>
+  <?php render_crud_table('Inventory Items', 'inventory_items', crud_rows('inventory_items', $inventoryItems), 'inventory_procurement'); ?>
+  <?php render_crud_table('Vaccination Stock', 'vaccination_stock', crud_rows('vaccination_stock', $vaccinationStock), 'inventory_procurement'); ?>
+  <?php render_crud_table('Stock Transactions', 'stock_transactions', crud_rows('stock_transactions', $stockTransactions), 'inventory_procurement'); ?>
 </main>
