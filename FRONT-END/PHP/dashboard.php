@@ -18,17 +18,27 @@
     <div class="cycle-pill">Cycle Day: <strong>Put Number Here</strong></div>
   </section>
 
-  <section class="module-summary-card">
-    <div class="module-summary-header">
-      <h2>Farm Modules</h2>
-    </div>
-    <div class="module-summary-grid">
-      <div class="module-summary-item module-blue">Livestock Management</div>
-      <div class="module-summary-item module-green">Feed Production</div>
-      <div class="module-summary-item module-yellow">Equipment Management</div>
-      <div class="module-summary-item module-purple">Inventory &amp; Procurement</div>
-      <div class="module-summary-item module-red">Sales Management</div>
-    </div>
+  <section class="module-mini-grid">
+    <article class="mini-module-card module-blue">
+      <span class="mini-module-label">Livestock Management</span>
+      <strong class="mini-module-value">680 Heads</strong>
+    </article>
+    <article class="mini-module-card module-green">
+      <span class="mini-module-label">Feed Production</span>
+      <strong class="mini-module-value">4,200 kg</strong>
+    </article>
+    <article class="mini-module-card module-yellow">
+      <span class="mini-module-label">Equipment Management</span>
+      <strong class="mini-module-value">18 Active</strong>
+    </article>
+    <article class="mini-module-card module-purple">
+      <span class="mini-module-label">Inventory &amp; Procurement</span>
+      <strong class="mini-module-value">96% Stock</strong>
+    </article>
+    <article class="mini-module-card module-red">
+      <span class="mini-module-label">Sales Management</span>
+      <strong class="mini-module-value">$14.8K</strong>
+    </article>
   </section>
 
   <section class="kpi-grid">
