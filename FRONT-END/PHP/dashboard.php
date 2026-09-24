@@ -23,9 +23,9 @@ $dashboardMetrics = crud_rows('dashboard_metrics', [
   <section class="page-header">
     <div>
       <h1 class="page-title">Operational KPI Performance</h1>
-      <p class="page-subtitle">Put Something Here</p>
+      <p class="page-subtitle">Performance Data</p>
     </div>
-    <div class="cycle-pill">Cycle Day: <strong>Put Number Here</strong></div>
+    <div class="cycle-pill">Cycle Day: <strong>3 Months</strong></div>
   </section>
 
   <section class="module-mini-grid">
