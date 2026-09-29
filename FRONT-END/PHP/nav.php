@@ -20,6 +20,23 @@ $currentPage = $currentPage ?? 'dashboard';
       <?php endif; ?>
 
       <div class="sidebar-footer">
-        <a href="LOGIN.PHP?logout=1" class="nav-link">Sign out</a>
+        <button type="button" class="nav-link sign-out-trigger" aria-haspopup="dialog" aria-controls="sign-out-dialog">Sign out</button>
       </div>
     </nav>
+
+    <dialog class="sign-out-dialog" id="sign-out-dialog" aria-labelledby="sign-out-title" aria-describedby="sign-out-description">
+      <h2 id="sign-out-title">Sign out?</h2>
+      <p id="sign-out-description">You will need to sign in again to access the dashboard.</p>
+      <div class="sign-out-actions">
+        <form method="dialog">
+          <button type="submit" class="sign-out-cancel">Cancel</button>
+        </form>
+        <a href="LOGIN.PHP?logout=1" class="sign-out-confirm">Sign out</a>
+      </div>
+    </dialog>
+
+    <script>
+      document.querySelector('.sign-out-trigger').addEventListener('click', function () {
+        document.getElementById('sign-out-dialog').showModal();
+      });
+    </script>

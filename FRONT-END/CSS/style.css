@@ -81,8 +81,13 @@ button {
 /* ---- Sidebar ---- */
 
 .sidebar {
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
   width: 248px;
+  height: 100vh;
   flex-shrink: 0;
+  overflow-y: auto;
   background: var(--sidebar-bg);
   color: var(--sidebar-text);
   display: flex;
@@ -198,6 +203,85 @@ button {
 }
 
 .nav-link.active svg { opacity: 1; }
+
+.sign-out-trigger {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+}
+
+.sign-out-dialog {
+  width: min(420px, calc(100vw - 32px));
+  padding: 26px;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  background: var(--card-bg);
+  color: var(--ink);
+  box-shadow: 0 20px 60px rgba(16, 24, 40, 0.2);
+}
+
+.sign-out-dialog::backdrop {
+  background: rgba(16, 24, 40, 0.52);
+  backdrop-filter: blur(3px);
+}
+
+.sign-out-dialog h2 {
+  margin: 0 0 7px;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.sign-out-dialog p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 13.5px;
+}
+
+.sign-out-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 24px;
+}
+
+.sign-out-actions form { margin: 0; }
+
+.sign-out-cancel,
+.sign-out-confirm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.sign-out-cancel {
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--ink-soft);
+}
+
+.sign-out-confirm {
+  border: 1px solid var(--red);
+  background: var(--red);
+  color: #fff;
+}
+
+.sign-out-confirm:hover { background: #B42318; }
+
+.sign-out-cancel:focus-visible,
+.sign-out-confirm:focus-visible,
+.sign-out-trigger:focus-visible {
+  outline: 3px solid var(--accent-green);
+  outline-offset: 2px;
+}
 
 .nav-badge,
 .badge {
